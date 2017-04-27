@@ -1,6 +1,6 @@
 all: temperature-server
 
-CONTIKI=../../../iot/contiki
+CONTIKI=../../../contiki-3.x
 
 CFLAGS += -DPROJECT_CONF_H=\"project-conf.h\"
 

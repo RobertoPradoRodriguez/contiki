@@ -1,4 +1,4 @@
 all: rpl-manual
 
-CONTIKI=../../contiki-2.6
+CONTIKI=../../contiki
 include $(CONTIKI)/Makefile.include

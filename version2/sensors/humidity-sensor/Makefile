@@ -1,6 +1,6 @@
 all: humidity-server
 
-CONTIKI=../../../git/contiki-3.0
+CONTIKI=../../../contiki-3.x
 
 CFLAGS += -DPROJECT_CONF_H=\"project-conf.h\"
 

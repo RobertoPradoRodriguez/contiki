@@ -10,6 +10,6 @@ CONTIKI_WITH_IPV6 = 1
 
 APPS += mqtt
 
-CONTIKI=../../iot/contiki
+CONTIKI=../../contiki
 include $(CONTIKI)/Makefile.include
 
