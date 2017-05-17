@@ -1,0 +1,99 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<project
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>org.eclipse.californium</groupId>
+		<artifactId>demo-apps</artifactId>
+		<version>1.1.0-SNAPSHOT</version>
+	</parent>
+	<artifactId>cf-proxy</artifactId>
+	<packaging>bundle</packaging>
+
+	<name>Cf-ExampleCrossProxy</name>
+	<description>Californium (Cf) HTTP cross-proxy for testing californium-proxy module</description>
+
+	<properties>
+		<assembly.mainClass>org.eclipse.californium.examples.ExampleCrossProxy</assembly.mainClass>
+	</properties>
+
+	<dependencies>
+	<dependency>
+      	<groupId>org.apache.felix</groupId>
+      		<artifactId>org.osgi.core</artifactId>
+      		<version>1.0.0</version>
+    	</dependency>
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>californium-core</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>californium-proxy</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.osgi</groupId>
+			<artifactId>osgi_R4_core</artifactId>
+			<version>1.0</version>
+			<scope>provided</scope>
+			<optional>true</optional>
+		</dependency>
+		<dependency>
+			<groupId>org.osgi</groupId>
+			<artifactId>osgi_R4_compendium</artifactId>
+			<version>1.0</version>
+			<scope>provided</scope>
+			<optional>true</optional>
+		</dependency>
+		
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<!--  <groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-assembly-plugin</artifactId> -->
+				<!-- inherit configuration from parent POM -->
+				 <groupId>org.apache.felix</groupId>
+	             <artifactId>maven-bundle-plugin</artifactId>
+	             <version>2.5.3</version>
+	             <extensions>true</extensions>
+	             <configuration>
+	             	<manifestLocation>META-INF</manifestLocation>
+	                <instructions>
+	                   <Export-Package>  java.io.IOException, org.eclipse.californium.core.CoapResource,
+	                    org.eclipse.californium.core.CoapServer, org.eclipse.californium.core.network.config.NetworkConfig, 
+	                    org.eclipse.californium.core.server.resources.CoapExchange, 
+	                    org.eclipse.californium.proxy.DirectProxyCoapResolver,
+	                    org.eclipse.californium.proxy.ProxyHttpServer,
+						org.eclipse.californium.proxy.resources.ForwardingResource, 
+						org.eclipse.californium.proxy.resources.ProxyCoapClientResource, 
+						org.eclipse.californium.proxy.resources.ProxyHttpClientResource
+					   </Export-Package>
+	                   <!--  OMITIMOS <Private-Package>com.chuidiang.ejemplos.*</Private-Package>  -->
+	                   <Import-Package> java.io.IOException, org.eclipse.californium.core.CoapResource,
+	                    org.eclipse.californium.core.CoapServer, org.eclipse.californium.core.network.config.NetworkConfig, 
+	                    org.eclipse.californium.core.server.resources.CoapExchange, 
+	                    org.eclipse.californium.proxy.DirectProxyCoapResolver,
+	                    org.eclipse.californium.proxy.ProxyHttpServer,
+						org.eclipse.californium.proxy.resources.ForwardingResource, 
+						org.eclipse.californium.proxy.resources.ProxyCoapClientResource,
+						org.eclipse.californium.proxy.resources.ProxyHttpClientResource
+						</Import-Package>
+						<Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
+	                   <!--  <Bundle-Activator></Bundle-Activator> -->
+	                   <Embed-Dependency>*;scope=compile|runtime</Embed-Dependency>
+	                   <Embed-Transitive>true</Embed-Transitive>
+	                   <Embed-Directory>lib</Embed-Directory>
+	                </instructions>
+	               </configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>

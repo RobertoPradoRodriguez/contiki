@@ -1,0 +1,61 @@
+Manifest-Version: 1.0
+Bnd-LastModified: 1495033080688
+Build-Jdk: 1.8.0_131
+Built-By: roberto
+Bundle-ClassPath: .,lib/org.osgi.core-1.0.0.jar,lib/californium-core-1.1
+ .0-20170429.061301-48.jar,lib/element-connector-1.1.0-20170429.061303-4
+ 2.jar,lib/netty-all-4.1.1.Final.jar,lib/californium-proxy-1.1.0-2017042
+ 9.061301-48.jar,lib/httpcore-nio-4.2.5.jar,lib/httpcore-4.2.5.jar,lib/h
+ ttpclient-4.2.5.jar,lib/commons-logging-1.1.1.jar,lib/commons-codec-1.6
+ .jar,lib/guava-15.0.jar
+Bundle-Description: Californium (Cf) HTTP cross-proxy for testing califo
+ rnium-proxy module
+Bundle-DocURL: http://www.eclipse.org/
+Bundle-License: http://www.eclipse.org/org/documents/epl-v10.php, http:/
+ /www.eclipse.org/org/documents/edl-v10.php
+Bundle-ManifestVersion: 2
+Bundle-Name: Cf-ExampleCrossProxy
+Bundle-SymbolicName: cf-proxy
+Bundle-Vendor: Eclipse Foundation
+Bundle-Version: 1.1.0.SNAPSHOT
+Created-By: Apache Maven Bundle Plugin
+Embed-Dependency: *;scope=compile|runtime
+Embed-Directory: lib
+Embed-Transitive: true
+Embedded-Artifacts: lib/org.osgi.core-1.0.0.jar;g="org.apache.felix";a="
+ org.osgi.core";v="1.0.0",lib/californium-core-1.1.0-20170429.061301-48.
+ jar;g="org.eclipse.californium";a="californium-core";v="1.1.0-SNAPSHOT"
+ ,lib/element-connector-1.1.0-20170429.061303-42.jar;g="org.eclipse.cali
+ fornium";a="element-connector";v="1.1.0-SNAPSHOT",lib/netty-all-4.1.1.F
+ inal.jar;g="io.netty";a="netty-all";v="4.1.1.Final",lib/californium-pro
+ xy-1.1.0-20170429.061301-48.jar;g="org.eclipse.californium";a="californ
+ ium-proxy";v="1.1.0-SNAPSHOT",lib/httpcore-nio-4.2.5.jar;g="org.apache.
+ httpcomponents";a="httpcore-nio";v="4.2.5",lib/httpcore-4.2.5.jar;g="or
+ g.apache.httpcomponents";a="httpcore";v="4.2.5",lib/httpclient-4.2.5.ja
+ r;g="org.apache.httpcomponents";a="httpclient";v="4.2.5",lib/commons-lo
+ gging-1.1.1.jar;g="commons-logging";a="commons-logging";v="1.1.1",lib/c
+ ommons-codec-1.6.jar;g="commons-codec";a="commons-codec";v="1.6",lib/gu
+ ava-15.0.jar;g="com.google.guava";a="guava";v="15.0"
+Export-Package: org.eclipse.californium.core.server.resources.CoapExchan
+ ge;version="1.1.0",org.eclipse.californium.core.CoapResource;version="1
+ .1.0",org.eclipse.californium.proxy.resources.ProxyHttpClientResource;v
+ ersion="1.1.0",org.eclipse.californium.core.network.config.NetworkConfi
+ g;version="1.1.0",org.eclipse.californium.proxy.ProxyHttpServer;version
+ ="1.1.0",org.eclipse.californium.proxy.resources.ProxyCoapClientResourc
+ e;version="1.1.0",org.eclipse.californium.core.CoapServer;version="1.1.
+ 0",java.io.IOException;version="1.1.0",org.eclipse.californium.proxy.re
+ sources.ForwardingResource;version="1.1.0",org.eclipse.californium.prox
+ y.DirectProxyCoapResolver;version="1.1.0"
+Import-Package: org.eclipse.californium.core.server.resources.CoapExchan
+ ge,org.eclipse.californium.core.CoapServer,org.eclipse.californium.prox
+ y.resources.ProxyHttpClientResource,org.eclipse.californium.proxy.Direc
+ tProxyCoapResolver,org.eclipse.californium.proxy.resources.ForwardingRe
+ source,java.io.IOException,org.eclipse.californium.proxy.ProxyHttpServe
+ r,org.eclipse.californium.proxy.resources.ProxyCoapClientResource,org.e
+ clipse.californium.core.network.config.NetworkConfig,org.eclipse.califo
+ rnium.core.CoapResource
+Require-Capability: osgi.ee;filter:="(&(osgi.ee=JavaSE)(version=1.7))"
+Tool: Bnd-2.3.0.201405100607
+Require-Bundle: log4j;bundle-version="1.2.17",
+ morkai;bundle-version="1.0.0",
+ naga-no-em;bundle-version="1.0.0"
