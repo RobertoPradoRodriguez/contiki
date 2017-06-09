@@ -1,0 +1,414 @@
+<html>
+<head>
+	<title>Sitio web WSN</title>
+	<h1> Red de sensores y actuadores</h1>
+
+	<link href="style.css" rel="stylesheet" type="text/css">
+	
+	<script type="text/javascript">
+	function setURL(url,id_frame){
+    	document.getElementById(id_frame).src = url;
+	}
+		/*function enviar_formulario(){
+   			document.formulario1.submit()
+		}*/
+	</script>
+</head>
+<body> 	<!--
+		<iframe height="30px" width="200px" src="" name="iframe_a" style="border:none;"></iframe>
+		<p><a href="http://robertoprado.chickenkiller.com" target="iframe_a">W3Schools.com</a></p>
+		-->
+
+
+<div id="comedor">
+	<fieldset>
+	<legend>Comedor</legend>
+	<!-- ///////////    SENSORES   /////////////////		-->
+	<input 	value="Luz" type="button"
+			onclick="setURL('http://robertoprado.chickenkiller.com:8080/proxy/coap://[aaaa::212:7404:4:404]:5683/sensors/light','luz_comedor')" />
+	<iframe height="48px" width="170px" id="luz_comedor" src="">
+	</iframe><br><br><br>
+
+	<input 	value="Temperatura" type="button" 
+	 		onclick="setURL('http://robertoprado.chickenkiller.com:8080/proxy/coap://[aaaa::212:7414:14:1414]:5683/sensors/temperature','tem_comedor')"/>
+	<iframe height="23px" width="170px" id="tem_comedor" src="">
+	</iframe><br><br><br>
+
+	<input 	value="Humedad" type="button" 
+	 		onclick="setURL('http://robertoprado.chickenkiller.com:8080/proxy/coap://[aaaa::212:7414:14:1414]:5683/sensors/humidity','hum_comedor')" />
+	<iframe height="23px" width="170px" id="hum_comedor" src="">
+	</iframe>
+	<br><br>
+	<!-- ///////////    ACTUADORES   /////////////////		-->
+	<div class="calefaccion">
+		<b>Calefacci&oacute;n</b>
+		<iframe src="" height="0px" width="0px" 
+				name="oculto-calefaccion-comedor"
+				frameborder="0"></iframe>
+		<form 	action="http://robertoprado.chickenkiller.com:8080/proxy/coap://[aaaa::212:740e:e:e0e]:5683/actuators/heating" method="post" 
+				name="formulario1" target="oculto-calefaccion-comedor">
+  			<input type="radio" name="status" value="very-hot"/>
+  			Muy caliente<br>
+  			<input type="radio" name="status" value="hot"/>
+  			Caliente<br>
+  			<input type="radio" name="status" value="medium"/>
+  			Medio<br>
+  			<input type="radio" name="status" value="down"/>
+  			Apagada<br>
+  			<br><br>
+  			<input type="submit" value="Cambiar&#x00A;temperatura"/>
+  			<!-- <a href="javascript:enviar_formulario()">Enviar formulario</a> -->
+
+		</form>
+	</div>
+	<div>
+		<b>Persianas</b>
+		<iframe src="" height="0px" width="0px" 
+				name="oculto-persianas-comedor" 
+				frameborder="0"></iframe>
+		<form 	action="http://robertoprado.chickenkiller.com:8080/proxy/coap://[aaaa::212:7404:4:404]:5683/actuators/sunblind" method="post" 
+				target="oculto-persianas-comedor">
+  			<input type="radio" name="status" value="up"/>
+  			Subida<br>
+  			<input type="radio" name="status" value="middle-up"/>
+  			Medio subida<br>
+  			<input type="radio" name="status" value="medium"/>
+  			Por la mitad<br>
+  			<input type="radio" name="status" value="middle-down"/>
+  			Medio bajada<br>
+  			<input type="radio" name="status" value="down"/>
+  			Bajada<br>
+  			<br>
+  			<input type="submit" value="Mover persiana"/> 
+		</form>
+	</div>
+	</fieldset>
+</div>
+
+<div id="hab_1">
+	<fieldset>
+	<legend>Habitaci&oacute;n 1</legend>
+	<!-- ///////////    SENSORES   /////////////////		-->
+	<input 	value="Luz" type="button"
+			onclick="setURL('http://robertoprado.chickenkiller.com:8080/proxy/coap://[aaaa::212:7405:5:505]:5683/sensors/light','luz_hab_1')">
+	<iframe height="48px" width="170px" id="luz_hab_1" src="">
+	</iframe><br><br><br>
+
+	<input 	value="Temperatura" type="button" 
+	 		onclick="setURL('http://robertoprado.chickenkiller.com:8080/proxy/coap://[aaaa::212:7410:10:1010]:5683/sensors/temperature','tem_hab_1')"/>
+	<iframe height="23px" width="170px" id="tem_hab_1" src="">
+	</iframe><br><br><br>
+
+	<input 	value="Humedad" type="button" 
+	 		onclick="setURL('http://robertoprado.chickenkiller.com:8080/proxy/coap://[aaaa::212:7412:12:1212]:5683/sensors/humidity','hum_hab_1')"/>
+	<iframe height="23px" width="170px" id="hum_hab_1" src="">
+	</iframe>
+	<br><br>
+	<!-- ///////////    ACTUADORES   /////////////////		-->
+	<div class="calefaccion">
+		<b>Calefacci&oacute;n</b>
+		<iframe src="" height="0px" width="0px" 
+				name="oculto-calefaccion-hab1"
+				frameborder="0"></iframe>
+		<form 	action="http://robertoprado.chickenkiller.com:8080/proxy/coap://[aaaa::212:740d:d:d0d]:5683/actuators/heating" method="post" 
+				name="formulario1" target="oculto-calefaccion-hab1">
+  			<input type="radio" name="status" value="very-hot"/>
+  			Muy caliente<br>
+  			<input type="radio" name="status" value="hot"/>
+  			Caliente<br>
+  			<input type="radio" name="status" value="medium"/>
+  			Medio<br>
+  			<input type="radio" name="status" value="down"/>
+  			Apagada<br>
+  			<br><br>
+  			<input type="submit" value="Cambiar&#x00A;temperatura"/>
+  			<!-- <a href="javascript:enviar_formulario()">Enviar formulario</a> -->
+
+		</form>
+	</div>
+	<div>
+		<b>Persianas</b>
+		<iframe src="" height="0px" width="0px" 
+				name="oculto-persianas-hab1" 
+				frameborder="0"></iframe>
+		<form 	action="http://robertoprado.chickenkiller.com:8080/proxy/coap://[aaaa::212:7405:5:505]:5683/actuators/sunblind" method="post" 
+				target="oculto-persianas-hab1">
+  			<input type="radio" name="status" value="up"/>
+  			Subida<br>
+  			<input type="radio" name="status" value="middle-up"/>
+  			Medio subida<br>
+  			<input type="radio" name="status" value="medium"/>
+  			Por la mitad<br>
+  			<input type="radio" name="status" value="middle-down"/>
+  			Medio bajada<br>
+  			<input type="radio" name="status" value="down"/>
+  			Bajada<br>
+  			<br>
+  			<input type="submit" value="Mover persiana"/> 
+		</form>
+	</div>
+	</fieldset>
+</div>
+
+<div id="hab_2">
+	<fieldset>
+	<legend>Habitaci&oacute;n 2</legend>
+	<!-- ///////////    SENSORES   /////////////////		-->
+	<input 	value="Luz" type="button"
+			onclick="setURL('http://robertoprado.chickenkiller.com:8080/proxy/coap://[aaaa::212:7406:6:606]:5683/sensors/light','luz_hab_2')"/>
+	<iframe height="48px" width="170px" id="luz_hab_2" src="">
+	</iframe><br><br><br>
+
+	<input 	value="Temperatura" type="button" 
+	 		onclick="setURL('http://robertoprado.chickenkiller.com:8080/proxy/coap://[aaaa::212:740f:f:f0f]:5683/sensors/temperature','tem_hab_2')"/>
+	<iframe height="23px" width="170px" id="tem_hab_2" src="">
+	</iframe><br><br><br>
+
+	<input 	value="Humedad" type="button" 
+	 		onclick="setURL('http://robertoprado.chickenkiller.com:8080/proxy/coap://[aaaa::212:7411:11:1111]:5683/sensors/humidity','hum_hab_2')" />
+	<iframe height="23px" width="170px" id="hum_hab_2" src="">
+	</iframe>
+	<br><br>
+	<!-- ///////////    ACTUADORES   /////////////////		-->
+	<div class="calefaccion">
+		<b>Calefacci&oacute;n</b>
+		<iframe src="" height="0px" width="0px" 
+				name="oculto-calefaccion-hab2"
+				frameborder="0"></iframe>
+		<form 	action="http://robertoprado.chickenkiller.com:8080/proxy/coap://[aaaa::212:740c:c:c0c]:5683/actuators/heating" method="post" 
+				name="formulario1" target="oculto-calefaccion-hab2">
+  			<input type="radio" name="status" value="very-hot"/>
+  			Muy caliente<br>
+  			<input type="radio" name="status" value="hot"/>
+  			Caliente<br>
+  			<input type="radio" name="status" value="medium"/>
+  			Medio<br>
+  			<input type="radio" name="status" value="down"/>
+  			Apagada<br>
+  			<br><br>
+  			<input type="submit" value="Cambiar&#x00A;temperatura"/>
+  			<!-- <a href="javascript:enviar_formulario()">Enviar formulario</a> -->
+
+		</form>
+	</div>
+	<div>
+		<b>Persianas</b>
+		<iframe src="" height="0px" width="0px" 
+				name="oculto-persianas-hab2" 
+				frameborder="0"></iframe>
+		<form 	action="http://robertoprado.chickenkiller.com:8080/proxy/coap://[aaaa::212:7406:6:606]:5683/actuators/sunblind" method="post" 
+				target="oculto-persianas-hab2">
+  			<input type="radio" name="status" value="up"/>
+  			Subida<br>
+  			<input type="radio" name="status" value="middle-up"/>
+  			Medio subida<br>
+  			<input type="radio" name="status" value="medium"/>
+  			Por la mitad<br>
+  			<input type="radio" name="status" value="middle-down"/>
+  			Medio bajada<br>
+  			<input type="radio" name="status" value="down"/>
+  			Bajada<br>
+  			<br>
+  			<input type="submit" value="Mover persiana"/> 
+		</form>
+	</div>
+	</fieldset>
+</div>
+
+<div id="sala">
+	<fieldset>
+	<legend>Sala de Estar</legend>
+	<!-- ///////////    SENSORES   /////////////////		-->
+	<input 	value="Luz" type="button"
+			onclick="setURL('http://robertoprado.chickenkiller.com:8080/proxy/coap://[aaaa::212:7408:8:808]:5683/sensors/light','luz_sala')"/>
+	<iframe height="48px" width="170px" id="luz_sala" src="">
+	</iframe><br><br><br>
+
+	<input 	value="Temperatura" type="button" 
+	 		onclick="setURL('http://robertoprado.chickenkiller.com:8080/proxy/coap://[aaaa::212:7413:13:1313]:5683/sensors/temperature','tem_sala')"/>
+	<iframe height="23px" width="170px" id="tem_sala" src="">
+	</iframe><br><br><br>
+
+	<input 	value="Humedad" type="button" 
+	 		onclick="setURL('http://robertoprado.chickenkiller.com:8080/proxy/coap://[aaaa::212:7413:13:1313]:5683/sensors/humidity','hum_sala')"/>
+	<iframe height="23px" width="170px" id="hum_sala" src="">
+	</iframe>
+	<br><br>
+	<!-- ///////////    ACTUADORES   /////////////////		-->
+	<div class="calefaccion">
+		<b>Calefacci&oacute;n</b>
+		<iframe src="" height="0px" width="0px" 
+				name="oculto-calefaccion-sala"
+				frameborder="0"></iframe>
+		<form 	action="http://robertoprado.chickenkiller.com:8080/proxy/coap://[aaaa::212:740b:b:b0b]:5683/actuators/heating" method="post" 
+				name="formulario1" target="oculto-calefaccion-sala">
+  			<input type="radio" name="status" value="very-hot"/>
+  			Muy caliente<br>
+  			<input type="radio" name="status" value="hot"/>
+  			Caliente<br>
+  			<input type="radio" name="status" value="medium"/>
+  			Medio<br>
+  			<input type="radio" name="status" value="down"/>
+  			Apagada<br>
+  			<br><br>
+  			<input type="submit" value="Cambiar&#x00A;temperatura"/>
+  			<!-- <a href="javascript:enviar_formulario()">Enviar formulario</a> -->
+
+		</form>
+	</div>
+	<div>
+		<b>Persianas</b>
+		<iframe src="" height="0px" width="0px" 
+				name="oculto-persianas-sala" 
+				frameborder="0"></iframe>
+		<form 	action="http://robertoprado.chickenkiller.com:8080/proxy/coap://[aaaa::212:7408:8:808]:5683/actuators/sunblind" method="post" 
+				target="oculto-persianas-sala">
+  			<input type="radio" name="status" value="up"/>
+  			Subida<br>
+  			<input type="radio" name="status" value="middle-up"/>
+  			Medio subida<br>
+  			<input type="radio" name="status" value="medium"/>
+  			Por la mitad<br>
+  			<input type="radio" name="status" value="middle-down"/>
+  			Medio bajada<br>
+  			<input type="radio" name="status" value="down"/>
+  			Bajada<br>
+  			<br>
+  			<input type="submit" value="Mover persiana"/> 
+		</form>
+	</div>
+	</fieldset>
+</div>
+
+<div id="cocina">
+	<fieldset>
+	<legend>Cocina</legend>
+	<!-- ///////////    SENSORES   /////////////////		-->
+	<input 	value="Luz" type="button"
+			onclick="setURL('http://robertoprado.chickenkiller.com:8080/proxy/coap://[aaaa::212:7402:2:202]:5683/sensors/light','luz_cocina')"/>
+	<iframe height="48px" width="170px" id="luz_cocina" src="">
+	</iframe><br><br><br>
+
+	<input 	value="Temperatura" type="button" 
+	 		onclick="setURL('http://robertoprado.chickenkiller.com:8080/proxy/coap://[aaaa::212:7415:15:1515]:5683/sensors/temperature','tem_cocina')"/>
+	<iframe height="23px" width="170px" id="tem_cocina" src="">
+	</iframe><br><br><br>
+
+	<input 	value="Humedad" type="button" 
+	 		onclick="setURL('http://robertoprado.chickenkiller.com:8080/proxy/coap://[aaaa::212:7415:15:1515]:5683/sensors/humidity','hum_cocina')"/>
+	<iframe height="23px" width="170px" id="hum_cocina" src="" >
+	</iframe>
+	<br><br>
+	<!-- ///////////    ACTUADORES   /////////////////		-->
+	<div class="calefaccion">
+		<b>Calefacci&oacute;n</b>
+		<iframe src="" height="0px" width="0px" 
+				name="oculto-calefaccion-cocina"
+				frameborder="0"></iframe>
+		<form 	action="http://robertoprado.chickenkiller.com:8080/proxy/coap://[aaaa::212:7409:9:909]:5683/actuators/heating" method="post" 
+				name="formulario1" target="oculto-calefaccion-cocina">
+  			<input type="radio" name="status" value="very-hot"/>
+  			Muy caliente<br>
+  			<input type="radio" name="status" value="hot"/>
+  			Caliente<br>
+  			<input type="radio" name="status" value="medium"/>
+  			Medio<br>
+  			<input type="radio" name="status" value="down"/>
+  			Apagada<br>
+  			<br><br>
+  			<input type="submit" value="Cambiar&#x00A;temperatura"/>
+  			<!-- <a href="javascript:enviar_formulario()">Enviar formulario</a> -->
+
+		</form>
+	</div>
+	<div>
+		<b>Persianas</b>
+		<iframe src="" height="0px" width="0px" 
+				name="oculto-persianas-cocina" 
+				frameborder="0"></iframe>
+		<form 	action="http://robertoprado.chickenkiller.com:8080/proxy/coap://[aaaa::212:7402:2:202]:5683/actuators/sunblind" method="post" 
+				target="oculto-persianas-cocina">
+  			<input type="radio" name="status" value="up"/>
+  			Subida<br>
+  			<input type="radio" name="status" value="middle-up"/>
+  			Medio subida<br>
+  			<input type="radio" name="status" value="medium"/>
+  			Por la mitad<br>
+  			<input type="radio" name="status" value="middle-down"/>
+  			Medio bajada<br>
+  			<input type="radio" name="status" value="down"/>
+  			Bajada<br>
+  			<br>
+  			<input type="submit" value="Mover persiana"/> 
+		</form>
+	</div>
+	</fieldset>
+</div>
+
+<div id="banho">
+	<fieldset>
+	<legend>Ba&ntilde;o</legend>
+	<!-- ///////////    SENSORES   /////////////////		-->
+	<input 	value="Luz" type="button"
+			onclick="setURL('http://robertoprado.chickenkiller.com:8080/proxy/coap://[aaaa::212:7403:3:303]:5683/sensors/light','luz_banho')"/>
+	<iframe height="48px" width="170px" id="luz_banho" src="">
+	</iframe><br><br><br>
+
+	<input 	value="Temperatura" type="button" 
+	 		onclick="setURL('http://robertoprado.chickenkiller.com:8080/proxy/coap://[aaaa::212:7416:16:1616]:5683/sensors/temperature','tem_banho')"/>
+	<iframe height="23px" width="170px" id="tem_banho" src="">
+	</iframe><br><br><br>
+
+	<input 	value="Humedad" type="button" 
+	 		onclick="setURL('http://robertoprado.chickenkiller.com:8080/proxy/coap://[aaaa::212:7416:16:1616]:5683/sensors/humidity','hum_banho')" />
+	<iframe height="23px" width="170px" id="hum_banho" src="">
+	</iframe>
+	<br><br>
+	<!-- ///////////    ACTUADORES   /////////////////		-->
+	<div class="calefaccion">
+		<b>Calefacci&oacute;n</b>
+		<iframe src="" height="0px" width="0px" 
+				name="oculto-calefaccion-banho"
+				frameborder="0"></iframe>
+		<form 	action="http://robertoprado.chickenkiller.com:8080/proxy/coap://[aaaa::212:740a:a:a0a]:5683/actuators/heating" method="post" 
+				name="formulario1" target="oculto-calefaccion-banho">
+  			<input type="radio" name="status" value="very-hot"/>
+  			Muy caliente<br>
+  			<input type="radio" name="status" value="hot"/>
+  			Caliente<br>
+  			<input type="radio" name="status" value="medium"/>
+  			Medio<br>
+  			<input type="radio" name="status" value="down"/>
+  			Apagada<br>
+  			<br><br>
+  			<input type="submit" value="Cambiar&#x00A;temperatura"/>
+  			<!-- <a href="javascript:enviar_formulario()">Enviar formulario</a> -->
+
+		</form>
+	</div>
+	<div>
+		<b>Persianas</b>
+		<iframe src="" height="0px" width="0px" 
+				name="oculto-persianas-banho" 
+				frameborder="0"></iframe>
+		<form 	action="http://robertoprado.chickenkiller.com:8080/proxy/coap://[aaaa::212:7403:3:303]:5683/actuators/sunblind" method="post" 
+				target="oculto-persianas-banho">
+  			<input type="radio" name="status" value="up"/>
+  			Subida<br>
+  			<input type="radio" name="status" value="middle-up"/>
+  			Medio subida<br>
+  			<input type="radio" name="status" value="medium"/>
+  			Por la mitad<br>
+  			<input type="radio" name="status" value="middle-down"/>
+  			Medio bajada<br>
+  			<input type="radio" name="status" value="down"/>
+  			Bajada<br>
+  			<br>
+  			<input type="submit" value="Mover persiana"/> 
+		</form>
+	</div>
+	</fieldset>
+</div>
+
+</body>
+</html>

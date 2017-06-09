@@ -1,0 +1,22 @@
+#comedor, #hab_1, #hab_2, #sala, #cocina, #banho {
+	width: 330px;
+	display: inline-block;
+	margin-right: 30px;
+}
+
+#sala, #cocina, #banho {
+	margin-top: 30px;
+}
+
+iframe {
+	float: right;
+}
+
+input [type="button"] {
+	vertical-align: top;
+}
+
+.calefaccion {
+	float: left;
+	margin-right: 26px;
+}
